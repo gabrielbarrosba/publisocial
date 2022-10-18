@@ -1,0 +1,39 @@
+---
+import Banner from "../components/Banner.astro";
+---
+
+<header class="banner">
+    <Banner
+        titulo="PubliSocial - Plataforma para divulgação de Eventos Comunitários"
+        subtitulo="Prefeituras, sindicatos e organizações sociais, solicite aqui o cadastro do seu evento"
+        access="Inscreva-se"
+    />
+</header>
+
+
+<style>
+
+.banner{
+    background-color: #f36e2d;
+    color: #fff;
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.banner::before{
+    background-image: url('../images/banner.jpg');
+    content: "";
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-attachment: fixed;
+    opacity: 0.1;
+    }
+</style>

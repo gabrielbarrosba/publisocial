@@ -1,0 +1,30 @@
+---
+const { button } = Astro.props
+---
+
+<a href="inscreva-se"><button>{button}</button></a>
+
+<style>
+  a{
+    text-decoration: none;
+  }
+
+  button {
+    background-color: #fff;
+    border-radius: 22px;
+    color: #f36e2d;
+    cursor: pointer;
+    padding: 12px 68px;
+    transition: 125ms ease-out;
+    position: relative;
+    display: flex;
+    font-size: 18px;
+    border: none;
+  }
+
+  button:hover {
+    background-color: #00998E;
+    color: #fff;
+    transition-timing-function: ease-in;
+  }
+</style>

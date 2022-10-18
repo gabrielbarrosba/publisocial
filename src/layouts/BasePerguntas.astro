@@ -1,0 +1,39 @@
+---
+import Faq from "../components/Faq.astro";
+---
+
+<section>
+  <h2>Perguntas Frequentes</h2>
+  <div class="faq">
+    <Faq 
+      title="Quem pode se cadastrar e publicar ações?"
+      desc="O foco da plataforma é divulgar ações comunitárias, assim, prefeituras, sindicatos, dentre outras organizações sociais podem participar."
+      id="question-1"
+      form="question-1"
+    />
+    <Faq 
+      title="Como participar da PubliSocial?"
+      desc="Basta acessar inscreva-se que nossa equipe avaliará a solicitação."
+      id="question-2"
+      form="question-2"
+    />
+  </div>
+</section>
+
+<style>
+
+section{
+  padding: 6% 0;
+}
+
+h2{
+  text-align: center;
+  font-weight: 600;
+  color: #f36e2d;
+  margin-bottom: 2%;
+}
+.faq{
+  padding: 0 10%;
+}
+
+</style>

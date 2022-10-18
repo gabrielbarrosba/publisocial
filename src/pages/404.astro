@@ -1,0 +1,50 @@
+---
+import PageSuport from "../layouts/PageSuport.astro";
+import Error from "../images/404.svg"
+import ButtonInsc from "../components/ButtonInsc.astro";
+---
+
+<html>
+  <PageSuport
+  title_page="Erro 404"
+  />
+
+  <body>
+    <section class="error">
+      <img src={Error} alt="Erro 404">
+      <h1>Essa página não existe</h1>
+      <a href="/plataforma_publisocial/">Voltar a página inicial</a>
+    </section>
+  </body>
+
+<style>
+
+h1{
+  color: #f36e2d;
+  padding: 4%;
+ }
+
+.error{
+  text-align: center;
+  padding: 10% 28%;
+}
+
+.error img{
+  width: 60%;
+}
+
+.error a{
+  text-decoration: none;
+  background-color: #f36e2d;
+  padding: 2% 3.2%;
+  color: #fff;
+  border-radius: 24px;
+  font-weight: 500;
+}
+
+.error a:hover{
+  background-color: #00998E;
+
+}
+</style>
+</html>

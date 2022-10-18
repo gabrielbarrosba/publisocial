@@ -1,0 +1,22 @@
+---
+const { title, paragraph} = Astro.props
+---
+
+<div class="common-section">
+    <h1>{title}</h1>
+    <p>{paragraph}</p>
+</div>
+
+<style>
+    h1{
+      color: #f36e2d;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    
+    p{
+        line-height: 28px;
+        text-align: justify;
+        font-size: 18px;
+    }
+</style>

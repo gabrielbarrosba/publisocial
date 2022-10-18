@@ -1,0 +1,60 @@
+---
+const { title, subtitle, access, ajude, desc_img  } = Astro.props
+import ButtonInsc from './ButtonInsc.astro';
+---
+
+<div class="banner-two">
+  <div>
+    <h2>{title}</h2>
+    <p>{subtitle}</p>
+    <ButtonInsc button={access} />
+  </div>
+  <div>
+    <img src={ajude} alt={desc_img}>
+  </div>
+</div>
+
+<style>
+  
+.banner-two{
+  padding: 4% 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-two div img {
+  width: 88%;
+}
+
+.banner-two h2 {
+  font-size: 40px;
+  width: 80%;
+  margin-bottom: 12px;
+}
+
+.banner-two p {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 700px) {
+  .banner-two{
+    padding-top: 12%;
+    grid-template-columns: 1fr; 
+  }
+
+  .banner-two h2 {
+    font-size: 30px;
+  }
+
+  .banner-two p {
+    font-size: 14px;
+    margin-bottom: 4%;
+  }
+  .banner-two div img {
+   padding-top: 20%;
+   padding-bottom: 20%;
+  }
+}
+</style>
