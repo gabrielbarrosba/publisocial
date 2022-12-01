@@ -1,0 +1,38 @@
+---
+import Banner from "../components/Banner.astro";
+---
+
+<header class="banner">
+    <Banner
+        titulo="Conheça a Nossa Política de Privacidade"
+        subtitulo="Tire todas as suas dúvidas sobre a LGPD"
+        access="Fale Conosco"
+    />
+</header>
+
+
+<style>
+
+.banner{
+    background-color: #f36f2d;
+    color: #fff;
+    position: relative;
+    height: 60vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.banner::before{
+    content: "";
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-attachment: fixed;
+    opacity: 0.1;
+    }
+</style>
