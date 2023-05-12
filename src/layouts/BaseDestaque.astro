@@ -6,14 +6,12 @@ const profiles = await fetch('http://localhost:8080/eventos').then(res => res.js
 <section>
   <h2>Eventos em Destaque</h2>
 
-  <div class="l-base-layout">   
-    {profiles.map(profile => (
+  <div class="l-base-layout">  
       <CardDestaque
-        name={`${profile.name}`}
-        date={profile.date}
-        address={`${profile.local}`}
+        name={Evento Teste}
+        date={12/05/2023}
+        address={Avenida Otávio Santos}
       />
-    ))}
   </div>
 </section>
 
