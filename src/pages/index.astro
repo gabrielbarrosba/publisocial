@@ -17,9 +17,9 @@ const { data } = await response.json();
 
   <body>
     <BaseBanner 
-      titulo="{`${data.attributes.Titulo}`}"
-      subtitulo="{`${data.attributes.SubTitulo}`}"
-      access="Inscreva-se"
+      titulo={`${data.attributes.Titulo}`}
+      subtitulo={`${data.attributes.SubTitulo}`}
+      access={`${data.attributes.TextButton}`}
     />
     <BaseDestaque />
     <BaseAjuda />
