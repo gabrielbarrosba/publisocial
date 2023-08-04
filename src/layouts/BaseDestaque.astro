@@ -1,19 +1,16 @@
 ---
 import CardDestaque from '../components/CardDestaque.astro';
-const profiles = await fetch('http://localhost:8080/eventos').then(res => res.json())
 
 ---
 <section>
   <h2>Eventos em Destaque</h2>
 
   <div class="l-base-layout">   
-    {profiles.map(profile => (
       <CardDestaque
-        name={`${profile.name}`}
-        date={profile.date}
-        address={`${profile.local}`}
+        name="test"
+        date="test1"
+        address="test2"
       />
-    ))}
   </div>
 </section>
 

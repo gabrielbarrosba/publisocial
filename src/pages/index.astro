@@ -5,6 +5,8 @@ import BaseDestaque from "../layouts/BaseDestaque.astro";
 import BasePerguntas from "../layouts/BasePerguntas.astro";
 import BaseFooter from "../layouts/BaseFooter.astro";
 import PageSuport from "../layouts/PageSuport.astro";
+const response = await fetch("http://127.0.0.1:1337/api/home-pages/1");
+const { data } = await response.json();
 ---
 
 <html>
@@ -14,7 +16,11 @@ import PageSuport from "../layouts/PageSuport.astro";
   />
 
   <body>
-    <BaseBanner />
+    <BaseBanner 
+      titulo="{`${data.attributes.Titulo}`}"
+      subtitulo="{`${data.attributes.SubTitulo}`}"
+      access="Inscreva-se"
+    />
     <BaseDestaque />
     <BaseAjuda />
     <BasePerguntas />
