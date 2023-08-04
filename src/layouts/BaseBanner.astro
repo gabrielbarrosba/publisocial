@@ -1,5 +1,5 @@
 ---
-const { titulo, subtitulo, access } = Astro.props
+const { titulo, subtitulo, access, backgroundBanner } = Astro.props
 import Banner from "../components/Banner.astro";
 ---
 
@@ -12,10 +12,9 @@ import Banner from "../components/Banner.astro";
 </header>
 
 
-<style>
-
+<style define:vars={{ backgroundBanner }}>
 .banner{
-    background-color: #f36e2d;
+    background-color: var(--backgroundBanner);
     color: #fff;
     position: relative;
     height: 70vh;
