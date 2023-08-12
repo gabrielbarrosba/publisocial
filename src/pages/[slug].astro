@@ -1,0 +1,51 @@
+---
+import BaseAjuda from "../layouts/BaseAjuda.astro"
+import BaseBanner from "../layouts/BaseBanner.astro";
+import BaseDestaque from "../layouts/BaseDestaque.astro";
+import BasePerguntas from "../layouts/BasePerguntas.astro";
+import BaseFooter from "../layouts/BaseFooter.astro";
+import PageSuport from "../layouts/PageSuport.astro";
+import fetchApi from '../../lib/strapi';
+import type Article from '../interfaces/page';
+
+export async function getStaticPaths() {
+  const articles = await fetchApi<Article[]>({
+    endpoint: 'home-pages',
+    wrappedByKey: 'data',
+  });
+
+  return articles.map((article) => ({
+    params: { slug: article.attributes.Slug },
+    props: { titlePage: article.attributes.TituloPage, 
+      titleBanner: article.attributes.TituloBanner, 
+      subtitleBanner: article.attributes.SubTituloBanner,
+      textButtonBanner: article.attributes.TextButtonBanner, 
+      corBanner: article.attributes.CorBanner
+    },
+  }));
+}
+
+type Props = Article;
+
+const { titlePage, titleBanner, subtitleBanner, textButtonBanner, corBanner } = Astro.props;
+---
+
+<html>
+  <PageSuport
+  title_page={`${titlePage}`}
+  keywords="Prefeitura, eventos, multirões, vacinas"
+  />
+
+  <body>
+    <BaseBanner 
+      titulo={`${titleBanner}`}
+      subtitulo={`${subtitleBanner}`}
+      access={`${textButtonBanner}`}
+      backgroundBanner={`${corBanner}`}
+    />
+    <BaseDestaque />
+    <BaseAjuda />
+    <BasePerguntas />
+    <BaseFooter />
+  </body>
+</html>
